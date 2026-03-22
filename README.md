@@ -9,27 +9,27 @@ REPOSITORY CONTENTS
 
 FIRMWARE
 
-LocationCue_Summer2025.ino
+LocationCue_Summer2025.ino:
 Primary firmware used for PRD deployments during Summer 2025.
 Implements time‑based cue playback, modular configuration, and manuscript‑quality annotation.
 
-batteryTest.ino
+batteryTest.ino:
 Auxiliary firmware used for battery discharge and runtime testing of PRD hardware configurations.
 
-AUDIO CUE FILES
+AUDIO CUE FILES:
 These WAV files are used by the PRD for playback‑based field experiments.
 They are included here to ensure full reproducibility of manuscript methods.
 
-BACS_LocationCue_PrimaryComplex.wav
+BACS_LocationCue_PrimaryComplex.wav:
 Primary complex cue for BACS playback trials.
 
-NOBO_LocationCue_Song.wav
+NOBO_LocationCue_Song.wav:
 Song cue used for NOBO playback trials.
 
-PRAW_LocationCue_SongA+B.wav
+PRAW_LocationCue_SongA+B.wav:
 Combined cue used for PRAW playback trials.
 
-PLAY.wav
+PLAY.wav:
 Generic playback test file used for device validation and troubleshooting.
 
 DOCUMENTATION
