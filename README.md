@@ -35,10 +35,7 @@ Generic playback test file used for device validation and troubleshooting.
 DOCUMENTATION
 
 README.md
-GitHub‑formatted documentation.
-
-README.txt
-HardwareX‑style plain‑text documentation (this file).
+GitHub‑formatted documentation (this file).
 
 OTHER
 
