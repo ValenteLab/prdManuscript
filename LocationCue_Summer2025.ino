@@ -1,5 +1,6 @@
 //-----------------------------------------------------------------------------------------//
-// Never touch anything above line 300 unless you really know what you're doing
+// Avoid modifying any code above line 300 unless you have a thorough understanding of how 
+  the Teensy system functions and operates
 //-----------------------------------------------------------------------------------------//
 
 
@@ -373,123 +374,107 @@ void loop() {
   // }
 
 
-  // Just a reminder for the modes: 0 = stopped, 1 = recording, 2 = playing
-  ///0, 9, 18, 27, 36, 45, 54,
-  if (isMorning(h, m)) {
-    //Northern Bobwhite
-    if (mode == 0 && (m == 0 || m == 9 || m == 18 || m==27 || m==36 || m==45 || m==54)) {
-      startPlaying("NOBO_LocationCue_Song.wav");
+ // Just a reminder for the modes: 0 = stopped, 1 = recording, 2 = playing
+if (isMorning(h, m)) {
+
+    // ---------------------------------------------------------
+    // NORTHERN BOBWHITE — offset 0 minutes
+    // ---------------------------------------------------------
+    if (mode == 0 && (m % 5 == 0)) {
+        startPlaying("NOBO_LocationCue_Song.wav");
     }
-    if(mode==2 && (m==1 || m==10 || m==19 || m==28 || m==37 || m==46 || m==55)){
-      stopPlaying();
+    if (mode == 2 && (m % 5 == 1)) {
+        stopPlaying();
     }
-    if(mode==0 && (m==1 || m==10 || m==19 || m==28 || m==37 || m==46 || m==55)){
-      startRecording();
+    if (mode == 0 && (m % 5 == 1)) {
+        startRecording();
     }
-    if(mode==1 && (m==3 || m==12 || m==21 || m==30 || m==39 || m==48 || m==57)){
-      stopRecording();
-    }
-    //Bachman's Sparrow
-     if (mode == 0 && (m == 3 || m == 12 || m == 21 || m==30 || m==39 || m==48 || m==57)) {
-      startPlaying("BACS_LocationCue_PrimaryComplex.wav");
-    }
-    if(mode==2 && (m==4 || m==13 || m==22 || m==31 || m==40 || m==49 || m==58)){
-      stopPlaying();
-    }
-      if(mode==0 && (m==4 || m==13 || m==22 || m==31 || m==40 || m==49 || m==58)){
-      startRecording();
-    }
-    if(mode==1 && (m==6 || m==15 || m==24 || m==33|| m==42 || m==51 || m==0)){
-      stopRecording();
-    }
-  //Prairie Warbler
-    //SongA+B
-    if (mode == 0 && (m == 6 || m == 15 || m == 24 || m==33 || m==42|| m==51)) {
-      startPlaying("PRAW_LocationCue_SongA+B.wav");
-    }
-    if(mode==2 && (m==7|| m==16 || m==25|| m==34 || m==43|| m==52)){
-      stopPlaying();
-    }
-      if(mode==0 && (m==7|| m==16 || m==25|| m==34 || m==43|| m==52)){
-      startRecording();
-    }
-    if(mode==1 && (m==9 || m==18 || m==27 || m==36 || m==45|| m==54)){
-      stopRecording();
+    if (mode == 1 && (m % 5 == 3)) {
+        stopRecording();
     }
 
-  //Afternoon  
+    // ---------------------------------------------------------
+    // BACHMAN'S SPARROW — offset 2 minutes
+    // ---------------------------------------------------------
+    if (mode == 0 && (m % 5 == 2)) {
+        startPlaying("BACS_LocationCue_PrimaryComplex.wav");
+    }
+    if (mode == 2 && (m % 5 == 3)) {
+        stopPlaying();
+    }
+    if (mode == 0 && (m % 5 == 3)) {
+        startRecording();
+    }
+    if (mode == 1 && (m % 5 == 0)) {   // wrap-around at minute 60
+        stopRecording();
+    }
+
+    // ---------------------------------------------------------
+    // PRAIRIE WARBLER — offset 4 minutes
+    // ---------------------------------------------------------
+    if (mode == 0 && (m % 5 == 4)) {
+        startPlaying("PRAW_LocationCue_SongA+B.wav");
+    }
+    if (mode == 2 && (m % 5 == 0)) {   // 4+1 = 5 → minute 0
+        stopPlaying();
+    }
+    if (mode == 0 && (m % 5 == 0)) {
+        startRecording();
+    }
+    if (mode == 1 && (m % 5 == 2)) {
+        stopRecording();
+    }
+
 
 } else if (isAfternoon(h, m)) {
-    //Northern Bobwhite
-    if (mode == 0 && (m==0 || m==18 || m==36 || m==54)) {
-      startPlaying("NOBO_LocationCue_Song.wav");
-    }
-    if(mode==2 && (m==1 || m==19 || m==37 || m==55)){
-      stopPlaying();
-    }
-    if(mode==0 && (m==1 || m==19 || m==37 || m==55)){
-      startRecording();
-    }
-    if(mode==1 && (m==3 || m==21 ||m==39 || m==57)){
-      stopRecording();
-    }
-    //Bachman's Sparrow
-    if (mode == 0 && (m==6 || m==24 || m==42)) {
-      startPlaying("BACS_LocationCue_PrimaryComplex.wav");
-    }
-    if(mode==2 && (m==7 || m==25 || m==43)){
-      stopPlaying();
-    }
-      if(mode==0 && (m==7 || m==25 || m==43)){
-      startRecording();
-    }
-    if(mode==1 && (m==9 || m==27 || m==45)){
-      stopRecording();
-    }
 
-  //Prairie Warbler
-    //SongA/B
-    if (mode == 0 && (m==12 || m==30 || m==48)) {
-      startPlaying("PRAW_LocationCue_SongA+B.wav");
-    }
-    if(mode==2 && (m==13 || m==31 || m==49)){
-      stopPlaying();
-    }
-      if(mode==0 && (m==13 || m==31 || m==49)){
-      startRecording();
-    }
-    if(mode==1 && (m==15 || m==33 || m==51)){
-      stopRecording();
-    }
+    // ---------------------------------------------------------
+    // AFTERNOON — same offsets, same cycle
+    // ---------------------------------------------------------
 
-//Evening
+    // NORTHERN BOBWHITE
+    if (mode == 0 && (m % 5 == 0)) startPlaying("NOBO_LocationCue_Song.wav");
+    if (mode == 2 && (m % 5 == 1)) stopPlaying();
+    if (mode == 0 && (m % 5 == 1)) startRecording();
+    if (mode == 1 && (m % 5 == 3)) stopRecording();
+
+    // BACHMAN'S SPARROW
+    if (mode == 0 && (m % 5 == 2)) startPlaying("BACS_LocationCue_PrimaryComplex.wav");
+    if (mode == 2 && (m % 5 == 3)) stopPlaying();
+    if (mode == 0 && (m % 5 == 3)) startRecording();
+    if (mode == 1 && (m % 5 == 0)) stopRecording();
+
+    // PRAIRIE WARBLER
+    if (mode == 0 && (m % 5 == 4)) startPlaying("PRAW_LocationCue_SongA+B.wav");
+    if (mode == 2 && (m % 5 == 0)) stopPlaying();
+    if (mode == 0 && (m % 5 == 0)) startRecording();
+    if (mode == 1 && (m % 5 == 2)) stopRecording();
+
+
 } else if (isEvening(h, m)) {
-     //Northern Bobwhite
-    if (mode == 0 && (m==0 || m==12 || m==24 || m==36 || m==48)) {
-      startPlaying("NOBO_LocationCue_Song.wav");
-    }
-    if(mode==2 && (m==1 || m==13 || m==25 || m==37 || m==49)){
-      stopPlaying();
-    }
-    if(mode==0 && (m==1 || m==13 || m==25 || m==37 || m==49)){
-      startRecording();
-    }
-    if(mode==1 && (m==3 || m==15 ||m==27 || m==39 || m==51)){
-      stopRecording();
-    }
-    //Bachman's Sparrow
-    if (mode == 0 && (m==6 || m==18 || m==30 || m==42|| m==54)) {
-      startPlaying("BACS_LocationCue_PrimaryComplex.wav");
-    }
-    if(mode==2 && (m==7 || m==19 || m==31 || m==43|| m==55)){
-      stopPlaying();
-    }
-      if(mode==0 && (m==7 || m==19 || m==31 || m==43|| m==55)){
-      startRecording();
-    }
-    if(mode==1 && (m==9 || m==21 || m==33 || m==45|| m==57)){
-      stopRecording();
-    }
+
+    // ---------------------------------------------------------
+    // EVENING — same offsets, same cycle
+    // ---------------------------------------------------------
+
+    // NORTHERN BOBWHITE
+    if (mode == 0 && (m % 5 == 0)) startPlaying("NOBO_LocationCue_Song.wav");
+    if (mode == 2 && (m % 5 == 1)) stopPlaying();
+    if (mode == 0 && (m % 5 == 1)) startRecording();
+    if (mode == 1 && (m % 5 == 3)) stopRecording();
+
+    // BACHMAN'S SPARROW
+    if (mode == 0 && (m % 5 == 2)) startPlaying("BACS_LocationCue_PrimaryComplex.wav");
+    if (mode == 2 && (m % 5 == 3)) stopPlaying();
+    if (mode == 0 && (m % 5 == 3)) startRecording();
+    if (mode == 1 && (m % 5 == 0)) stopRecording();
+
+    // PRAIRIE WARBLER
+    if (mode == 0 && (m % 5 == 4)) startPlaying("PRAW_LocationCue_SongA+B.wav");
+    if (mode == 2 && (m % 5 == 0)) stopPlaying();
+    if (mode == 0 && (m % 5 == 0)) startRecording();
+    if (mode == 1 && (m % 5 == 2)) stopRecording();
+}
 
 
 
@@ -509,7 +494,6 @@ void loop() {
     //   stopRecording();
     // }
     
-
 
 
   } else {
