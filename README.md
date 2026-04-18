@@ -1,9 +1,9 @@
 PROJECT TITLE: Integrated acoustic monitoring and playback: A cost-effective solution for soundscape ecology
-Companion repository for the Programmable Research Device (PRD) submitted to HardwareX.
+Companion repository for the Playgack and Recording Device (PRD) submitted to HardwareX.
 This repository provides firmware, audio cue files, and reproducibility materials associated with the PRD described in the manuscript.
 
 SUMMARY
-The Programmable Research Device (PRD) is a low‑cost, field‑ready microcontroller platform designed for ecological monitoring, sensor integration, and automated data collection. This repository contains the firmware used in field deployments, audio cue files used for playback experiments, and documentation intended to ensure full reproducibility in accordance with HardwareX open‑hardware standards.
+The Playback and Recording Device (PRD) is a low‑cost, field‑ready microcontroller platform designed for ecological monitoring, sensor integration, and automated data collection. This repository contains the firmware used in field deployments, audio cue files used for playback experiments, and documentation intended to ensure full reproducibility in accordance with HardwareX open‑hardware standards.
 
 REPOSITORY CONTENTS
 
