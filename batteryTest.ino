@@ -282,6 +282,10 @@ void stopPlaying() {
 
 // -----------------------------------------------------------------------------
 // Utility Functions
+// This section contains helper functions that support timekeeping, debugging, 
+// and (future) audio‑level management for the Teensy‑based recording system. 
+// These functions don’t run the main detection logic; instead, they provide 
+// reusable tools that other parts of the code can call.
 // -----------------------------------------------------------------------------
 
 void adjustMicLevel() {
