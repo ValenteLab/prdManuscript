@@ -127,24 +127,24 @@ void loop() {
 
   bool activeHour = (h >= 8 && h <= 20);
 
-  // --- Playback start ---
-  if (activeHour && (m == 1 || m == 30) && mode == 0) {
-    startPlaying();
+  // --- Broadcasting start ---
+  if(m == 59 && (h==8 || h==9 || h==10 || h==11 || h==12 || h==13 || h==14 || h==15 || h==16 || h==17 || h==18 || h==19 || h==20)){
+    if(mode == 0) startPlaying();
   }
 
-  // --- Playback stop ---
-  if (activeHour && (m == 2 || m == 31) && mode == 2) {
-    stopPlaying();
+   // --- Broadcasting stop ---
+  if(m == 00 && (h==8 || h==9 || h==10 || h==11 || h==12 || h==13 || h==14 || h==15 || h==16 || h==17 || h==18 || h==19 || h==20)){
+    if(mode == 2) stopPlaying();
   }
 
   // --- Recording start ---
-  if (activeHour && (m == 2 || m == 31) && mode == 0) {
-    startRecording();
+  if(m == 35 && (h==8 || h==9 || h==10 || h==11 || h==12 || h==13 || h==14 || h==15 || h==16 || h==17 || h==18 || h==19 || h==20)){
+    if(mode == 0) startRecording();
   }
 
   // --- Recording stop ---
-  if (activeHour && (m == 3 || m == 32) && mode == 1) {
-    stopRecording();
+  if(m == 36 && (h==8 || h==9 || h==10 || h==11 || h==12 || h==13 || h==14 || h==15 || h==16 || h==17  || h==18 || h==19 || h==20)){
+    if(mode == 1) stopRecording();
   }
 
   // Continue active processes
