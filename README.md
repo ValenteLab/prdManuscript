@@ -58,7 +58,7 @@ A full Bill of Materials (BOM) will be included in the final manuscript suppleme
 
 FIRMWARE DETAILS
 
-LocationCue_Summer2025.ino
+Broadcast_and_Recording_Multiple_Species_Code.ino
 This firmware controls timed playback of species‑specific audio cues.
 Features include:
 
@@ -68,7 +68,7 @@ Features include:
 - Manuscript‑quality annotation for transparency and reproducibility
 - Logging and safety checks (as described in the manuscript)
 
-batteryTest.ino
+Broadcast_and_Recording_Test_Code.ino
 This firmware is used to characterize battery performance under realistic PRD loads.
 Features include:
 
