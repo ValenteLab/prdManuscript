@@ -97,8 +97,8 @@ File descriptions:
 
 DIRECTORY STRUCTURE
 prdManuscript/
-- LocationCue_Summer2025.ino
-- batteryTest.ino
+- Broadcast_and_Recording_Multiple_Species_Code.ino
+- Broadcast_and_Recording_Test_Code.ino
 - BACS_LocationCue_PrimaryComplex.wav
 - NOBO_LocationCue_Song.wav
 - PRAW_LocationCue_SongA+B.wav
