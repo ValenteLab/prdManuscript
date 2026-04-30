@@ -13,8 +13,8 @@ Broadcast_and_Recording_Multiple_Species_Code.ino:
 Primary firmware used for PRD deployments during Summer 2025.
 Implements time‑based cue playback, modular configuration, and manuscript‑quality annotation.
 
-batteryTest.ino:
-Auxiliary firmware used for battery discharge and runtime testing of PRD hardware configurations.
+Broadcast_and_Recording_Test_Code.ino:
+Auxiliary firmware used for quick testing of broadcasting and recording capabilities to assess battery discharge and runtime testing of PRD hardware configurations.
 
 AUDIO CUE FILES:
 These WAV files are used by the PRD for playback‑based field experiments.
