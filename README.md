@@ -9,7 +9,7 @@ REPOSITORY CONTENTS
 
 FIRMWARE
 
-LocationCue_Summer2025.ino:
+Broadcast_and_Recording_Multiple_Species_Code.ino:
 Primary firmware used for PRD deployments during Summer 2025.
 Implements time‑based cue playback, modular configuration, and manuscript‑quality annotation.
 
